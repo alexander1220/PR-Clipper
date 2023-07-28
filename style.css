@@ -1,0 +1,11 @@
+body{
+    width: 270px;
+    height: 100px;
+}
+
+#copybtn{
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+    height: 50px
+}
