@@ -30,6 +30,7 @@ async function getCurrentTabId() {
     }
 }
 
+/// WHY ARE YOU CHECKING THE SOURCE CODE, ╰（‵□′）╯
 async function getPullRequest(tabId) {
     try {
         const [result] = await chrome.scripting.executeScript({
@@ -38,7 +39,8 @@ async function getPullRequest(tabId) {
                 var url = window.location.href;
                 const prIdElement = document.querySelector('.pr-secondary-title-row-persona.flex-row.rhythm-horizontal-8.flex-center.flex-wrap');
                 var prNumber = prIdElement ? prIdElement.children[1].textContent : "!#";
-                const prNameElement = document.getElementById('__bolt-textfield-input-1');
+                const prNameElement = document.querySelector('[aria-label="Pull request title"]');
+                console.log(prNameElement)
                 var prName = prNameElement ? prNameElement.value : "<pr_name>"
                 return prNumber + " on *" + prName + "* ready for review!\n" + url;
             },
