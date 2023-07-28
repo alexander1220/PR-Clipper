@@ -40,7 +40,6 @@ async function getPullRequest(tabId) {
                 const prIdElement = document.querySelector('.pr-secondary-title-row-persona.flex-row.rhythm-horizontal-8.flex-center.flex-wrap');
                 var prNumber = prIdElement ? prIdElement.children[1].textContent : "!#";
                 const prNameElement = document.querySelector('[aria-label="Pull request title"]');
-                console.log(prNameElement)
                 var prName = prNameElement ? prNameElement.value : "<pr_name>"
                 return prNumber + " on *" + prName + "* ready for review!\n" + url;
             },
